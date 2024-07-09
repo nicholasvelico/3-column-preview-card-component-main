@@ -1,0 +1,161 @@
+/* ** Fonts *** */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* *** Variables *** */
+:root{
+	/* Primary Colors */
+	--bright-orange: hsl(31, 77%, 52%);
+	--dark-cyan: hsl(184, 100%, 22%);
+	--very-dark-cyan: hsl(179, 100%, 13%);
+
+	/* Neutral Colors */
+	--transparent-white: hsla(0, 0%, 100%, 0.75); /* Paragraph */
+	--very-light-gray: hsl(0, 0%, 95%); /* background, headings, buttons */
+
+	/* Fonts */
+	--lexend-deca: 'Lexend Deca', sans-serif;
+	--big-shoulders-display: 'Big Shoulders Display', sans serif;
+}
+
+body{
+	background-color: var(--very-light-gray);
+}
+
+.container{
+	display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 50%;
+    margin: 10% auto;
+    
+}
+
+.box{
+	position: relative;
+	height: 475px;
+	padding: 45px;
+}
+
+/* Titles */
+.title{
+	margin: 20px 0;
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-family: var(--big-shoulders-display);
+	font-weight: 700;
+	color: var(--very-light-gray);
+}
+
+/* Paragraph */
+.description{
+	font-family: var(--lexend-deca);
+	font-size: 17px;
+	color: var(--transparent-white);
+	padding-top: 15px;
+}
+
+/* Buttons */
+.btn{
+	cursor: pointer;
+	position: absolute;
+	bottom: 35px;
+	left: 60px;
+	border: none;
+	border-radius: 35px;
+	background: var(--very-light-gray);
+	color: transparent;
+	font-size: 15px;
+	font-family: var(--lexend-deca);
+	padding: 15px 30px;
+	text-align: center;
+	transition: all 0.3s;
+}
+
+.btn:hover {
+    border: var(--transparent-white) 1px solid;
+    color: var(--transparent-white);
+}
+
+/* Sedan's Section */
+.sedans{
+	background-color: var(--bright-orange);
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.sedans .btn {
+    color: var(--bright-orange);
+}
+
+.sedans .btn:hover{
+	color: var(--very-light-gray);
+	background-color: var(--bright-orange);
+}
+
+/* SUV's Section */
+.suvs{
+	background-color: var(--dark-cyan);
+}
+
+.suvs .btn{
+	color: var(--dark-cyan);
+}
+
+.suvs .btn:hover{
+	color: var(--very-light-gray);
+	background-color: var(--dark-cyan);
+}
+
+/* Luxury Section */
+.luxury{
+	background-color: var(--very-dark-cyan);
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.luxury .btn{
+	color: var(--very-dark-cyan);
+}
+
+.luxury .btn:hover{
+	color: var(--very-light-gray);
+	background-color: var(--very-dark-cyan);
+}
+
+/* Responsive */
+@media(max-width:768px){
+	.container{
+		grid-template-columns: 1fr;
+		width: 80%;
+		margin: 5% auto;
+	}
+
+	.box{
+		position: relative;
+		height: 400px;
+		padding-left: 50px;
+		padding-top: 50px;
+		padding-right: 40px;
+	}
+
+	.sedans{
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 15px;
+	}
+
+	.luxury{
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 15px;
+	}
+}
+
+@media(max-width375px){
+	.box{
+		height: 450px;
+	}
+}
